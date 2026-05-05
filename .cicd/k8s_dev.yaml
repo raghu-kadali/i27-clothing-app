@@ -58,12 +58,12 @@ spec:
               number: 80
 # this is writen if any domain we go routed toparticular dns only 
   - host: dev.raghuprojectdevops.in
-  http:
+    http:
       paths:
-      - path: "/"
-        pathType: Prefix
+      - pathType: Prefix
+        path: "/"
         backend:
           service:
-            name: i27-clothing-dev
+            name: i27-clothing-dev-service  # ✅ service name
             port:
-              number: 80
+              number: 80                    # ✅ service port
