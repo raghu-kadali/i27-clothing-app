@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: i27-clothing-ingress    
   namespace: cart-dev-ns
+  annotations:
+    kubernetes.io/ingress.class: "gce" 
 spec:
   rules:
   - host: dev-clothing.raghuprojectdevops.in
@@ -15,4 +17,3 @@ spec:
             name: i27-clothing-dev
             port:
               number: 80
-              
