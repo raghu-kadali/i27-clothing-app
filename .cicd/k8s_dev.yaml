@@ -36,3 +36,23 @@ spec:
       targetPort: 3000
       nodePort: 30002
   type: NodePort
+---                                        
+apiVersion: networking.k8s.io/v1      
+kind: Ingress
+metadata:
+  name: i27-clothing-ingress    
+  namespace: cart-dev-ns
+  annotations:
+    kubernetes.io/ingress.class: "gce"    
+spec:
+  rules:
+  - host: dev-clothing.raghuprojectdevops.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: i27-clothing-dev-service  
+            port:
+              number: 80
