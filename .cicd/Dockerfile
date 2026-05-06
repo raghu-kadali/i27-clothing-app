@@ -1,12 +1,11 @@
-FROM node:14
+FROM node:18-alpine
 ARG SRC_DIR=/opt/i27
 
 RUN mkdir $SRC_DIR
 WORKDIR $SRC_DIR
 COPY . $SRC_DIR
-RUN npm install
+RUN npm install --legacy-peer-deps
 EXPOSE 3000
-#  Fix: entrypoint.sh is inside .cicd/, so reference it correctly
 COPY .cicd/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
