@@ -12,9 +12,12 @@ spec:
       labels:
         app: i27-clothing-dev
     spec:
+      imagePullSecrets:
+      - name: jfrog-secret
       containers:
       - name: i27-clothing-dev
         image: DIT
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         command: ["/entrypoint.sh"]
@@ -36,7 +39,7 @@ spec:
       targetPort: 3000
       nodePort: 30002
   type: NodePort
----                                        
+---
 apiVersion: networking.k8s.io/v1      
 kind: Ingress
 metadata:
@@ -56,7 +59,6 @@ spec:
             name: i27-clothing-dev-service  
             port:
               number: 80
-# this is writen if any domain we go routed toparticular dns only 
   - host: dev.raghuprojectdevops.in
     http:
       paths:
@@ -64,6 +66,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: i27-clothing-dev-service  # ✅ service name
+            name: i27-clothing-dev-service
             port:
-              number: 80                 
+              number: 80
