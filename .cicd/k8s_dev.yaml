@@ -66,4 +66,4 @@ spec:
           service:
             name: i27-clothing-dev-service  # ✅ service name
             port:
-              number: 80                    # ✅ service port
+              number: 80                 
