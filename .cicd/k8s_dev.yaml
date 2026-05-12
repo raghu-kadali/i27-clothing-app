@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-        command: ["/entrypoint.sh"]
+        command: ["/bin/sh", "/entrypoint.sh"]
         args: ["dev"]
         env: 
         - name: ENVIRONMENT
