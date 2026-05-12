@@ -1,8 +1,8 @@
 const produtsServiceLocalHost = 'http://localhost:8132/api'
 const usersServiceLocalHost = 'http://localhost:8232/api'
 
-const produtsServiceDevHost = 'http://136.113.77.108:31144/api'
-const usersServiceDevHost = 'http://136.113.77.108:32202/api'
+const produtsServiceDevHost = 'http://34.9.130.207:31397/api'
+const usersServiceDevHost = 'http://34.9.130.207:30630/api'
 
 const produtsServiceTestHost = ''
 const usersServiceTestHost = ''
